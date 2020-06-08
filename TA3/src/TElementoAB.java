@@ -57,7 +57,6 @@ public class TElementoAB<T> implements IElementoAB<T> {
      */
     @Override
     public TElementoAB buscar(Comparable unaEtiqueta) {
-
         if (unaEtiqueta.equals(etiqueta)) {
             return this;
         } else if (unaEtiqueta.compareTo(etiqueta) < 0) {
@@ -145,7 +144,6 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
     public void setHijoIzq(TElementoAB elemento) {
         this.hijoIzq = elemento;
-
     }
 
     public void setHijoDer(TElementoAB elemento) {
@@ -164,7 +162,6 @@ public class TElementoAB<T> implements IElementoAB<T> {
         if (unaEtiqueta.compareTo(this.getEtiqueta()) > 0) {
             if (this.hijoDer != null) {
                 this.hijoDer = hijoDer.eliminar(unaEtiqueta);
-
             }
             return this;
         }
@@ -193,7 +190,6 @@ public class TElementoAB<T> implements IElementoAB<T> {
             elPadre.setHijoDer(elHijo.getHijoIzq());
             elHijo.setHijoIzq(hijoIzq);
         }
-
         elHijo.setHijoDer(hijoDer);
         return elHijo;
     }
@@ -202,13 +198,11 @@ public class TElementoAB<T> implements IElementoAB<T> {
     public void inOrden(Lista<T> unaLista) {
         if (hijoIzq != null) {
             hijoIzq.inOrden(unaLista);
-
         }
         unaLista.insertar(new Nodo<T>(this.etiqueta, this.getDatos()));
         if (hijoDer != null) {
             hijoDer.inOrden(unaLista);
         }
-
     }
 
     @Override
@@ -221,7 +215,6 @@ public class TElementoAB<T> implements IElementoAB<T> {
         if (hijoDer != null) {
             hijoDer.preOrden(unaLista);
         }
-
     }
 
     @Override
@@ -257,7 +250,5 @@ public class TElementoAB<T> implements IElementoAB<T> {
             indiceFNE[0]++;
         }
         return suma;
-
     }
-
 }
